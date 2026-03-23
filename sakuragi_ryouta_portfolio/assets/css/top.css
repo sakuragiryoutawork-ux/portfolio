@@ -1,0 +1,335 @@
+@charset "UTF-8";
+
+/* 共通 */
+h3 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+}
+
+p {
+    line-height: 1.5;
+}
+
+/* KV */
+.KV {
+    padding-top: 100px;
+    height: 100vh;
+    background: url(../image/img/sora.jpg)center center no-repeat;
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}
+
+.KV p {
+    color: rgba(255, 215, 84, 0.85);
+    font-size: 60px;
+    line-height: 1.7;
+    -webkit-text-stroke: 0.7px black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    /* display: none; */
+}
+
+.KV p {
+    /* color: rgba(255, 215, 84, 0.85);
+    font-size: 80px;
+    line-height: 1.7;
+    -webkit-text-stroke: 0.7px black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    display: none; */
+}
+
+.scroll-text {
+    color: #ffd754;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translate(-25%, -10px);
+    animation: Text 1.5s infinite;
+    display: none;
+}
+
+.scroll-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: solid #ffd754;
+    border-width: 0 5px 5px 0;
+    margin-top: 5px;
+    animation: bounce 1.5s infinite;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .KV {
+        padding: 0 40px;
+        background-size: cover;
+    }
+
+    .KV p {
+        font-size: 80px;
+        display: inline;
+    }
+
+    .scroll-text {
+        display: inline;
+    }
+
+    .scroll-icon {
+        display: inline;
+    }
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0) rotate(45deg);
+        }
+
+        /* 40% の時点の状態 */
+        40% {
+            transform: translateY(5px) rotate(45deg);
+        }
+
+        /* 60% の時点の状態 */
+        60% {
+            transform: translateY(3px) rotate(45deg);
+        }
+    }
+}
+
+@keyframes Text {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translate(-25%, -10px);
+    }
+
+    /* 40% の時点の状態 */
+    40% {
+        transform: translate(-25%, -5px);
+    }
+
+    /* 60% の時点の状態 */
+    60% {
+        transform: translate(-25%, -8px);
+    }
+}
+
+/* Skill */
+.Skill {
+    padding: 50px 0;
+    background: linear-gradient(to top, rgba(107, 121, 255, 0.7), rgba(0, 206, 255, 0.7));
+}
+
+.card {
+    width: 250px;
+    margin: 0 auto;
+    padding: 30px 0 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card+.card {
+    margin-top: 50px;
+}
+
+h3 {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.card img {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+}
+
+.card p {
+    margin: 10px 30px;
+    font-size: 18px;
+}
+
+.syurui {
+    color: #666666;
+}
+
+.wp-block-separator,
+p:empty {
+    display: none;
+}
+
+@media screen and (min-width: 900px) {
+    .Skill ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 250px);
+        gap: 75px;
+        justify-content: center;
+    }
+
+    .card {
+        margin: 0;
+        /* margin-bottom: 30px; */
+        transition: 0.3s;
+    }
+
+    .card+.card {
+        margin: 0px;
+    }
+
+    .card:hover {
+        box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.45);
+    }
+}
+
+/* Works */
+.Works {
+    padding: 50px 0;
+    background: linear-gradient(to top, rgba(177, 242, 255, 0.7), rgba(107, 121, 255, 0.7));
+}
+
+.slider {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    /* background-color: #fff; */
+}
+
+/* WorksとAboutのmoreボタン */
+
+.btnwa {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btnwa-btn {
+    width: 200px;
+    height: 45px;
+    margin: 10px 0 0;
+    font-size: 16px;
+    border: 0.3em solid #fff;
+    border-radius: 0.5em;
+    color: #fff;
+    background-color: rgba(107, 121, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+
+.btnwa-btn span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    left: 0;
+    background-color: #fff;
+    transform: translateY(150%);
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+@media screen and (min-width:900px) {
+    .slider {
+        max-width: 750px;
+    }
+
+    .work-list:hover {
+        box-shadow: none;
+        opacity: 0.5;
+    }
+
+
+    .btnwa-btn:hover {
+        color: #05d;
+    }
+
+    .btnwa-btn:hover span {
+        transform: translateY(0) scale(2);
+    }
+
+    .btnwa-btn span:nth-child(2) {
+        left: 25%;
+        transition-delay: 0.1S;
+    }
+
+    .btnwa-btn span:nth-child(3) {
+        left: 50%;
+        transition-delay: 0.2S;
+    }
+
+    .btnwa-btn span:nth-child(4) {
+        left: 75%;
+        transition-delay: 0.3S;
+    }
+}
+
+/* About */
+.About {
+    padding: 50px 0;
+    background: linear-gradient(to top, rgba(107, 121, 255, 0.7), rgba(255, 255, 255, 0.7), rgba(177, 242, 255, 0.7));
+}
+
+.ziko {
+    width: 290px;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    /* border: 1px solid #FA9A2D; */
+    border: 0.3em solid #fff;
+    border-radius: 10px;
+}
+
+.ziko-img {
+    width: 185px;
+    height: 247px;
+    margin: 0 auto 10px;
+    /* border: 0.3em solid rgb(107, 121, 255); */
+    display: block;
+}
+
+.ziko .text p:first-child {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+
+
+@media screen and (min-width: 900px) {
+    .ziko {
+        width: 750px;
+        padding: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ziko img {
+        margin: 0;
+    }
+
+    .text {
+        width: 450px;
+    }
+}
