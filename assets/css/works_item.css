@@ -78,6 +78,11 @@ h3 {
     font-optical-sizing: auto;
 }
 
+.overview hr {
+    margin-top: 10px;
+    border: 1px solid #ffd754;
+}
+
 .overview li {
     margin-top: 30px;
 }
@@ -85,6 +90,7 @@ h3 {
 .overview li p {
     color: #070092;
     margin-top: 10px;
+    line-height: 1.8;
 }
 
 /* 完成図 */

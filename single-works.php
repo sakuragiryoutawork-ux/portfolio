@@ -38,23 +38,28 @@
                         <ul>
                             <li>
                                 <h3>概要</h3>
-                                <p><?php the_field('overview'); ?></p>
+                                <hr>
+                                <p><?php echo nl2br(get_field('overview')); ?></p>
                             </li>
                             <li>
                                 <h3>制作時間</h3>
+                                <hr>
                                 <p><?php the_field('production_time'); ?></p>
                             </li>
                             <li>
                                 <h3>使用技術</h3>
-                                <p><?php the_field('using_code'); ?></p>
+                                <hr>
+                                <p><?php echo nl2br(get_field('using_code')); ?></p>
                             </li>
                             <li>
                                 <h3>工夫した点</h3>
-                                <p><?php the_field('ingenuity_point'); ?></p>
+                                <hr>
+                                <p><?php echo nl2br(get_field('ingenuity_point')); ?></p>
                             </li>
                             <li>
                                 <h3>苦労した点</h3>
-                                <p><?php the_field('hardship_point'); ?></p>
+                                <hr>
+                                <p><?php echo nl2br(get_field('hardship_point')); ?></p>
                             </li>
                         </ul>
                     </div>
