@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="nav">Contact
+                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="nav" target="_blank">Contact
                         <span></span><span></span><span></span><span></span>
                     </a>
                 </li>

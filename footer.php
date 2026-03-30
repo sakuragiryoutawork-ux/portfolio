@@ -18,7 +18,7 @@
                     <a href="<?php echo esc_url(home_url('/profile/')); ?>" class="nav">profile</a>
                 </li>
                 <li>
-                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="nav">Contact</a>
+                    <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="nav" target="_blank">Contact</a>
                 </li>
             </ul>
         </nav>

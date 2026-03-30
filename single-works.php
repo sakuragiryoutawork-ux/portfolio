@@ -34,6 +34,23 @@
                             <p class="tagu"><?php echo esc_html($term_name); ?></p>
                             <span><?php the_field('production_count'); ?></span>
                         </div>
+
+                        <div class="for_more">
+
+                            <?php if (get_field('site_url') || get_field('out_site_url')): ?>
+                                <a href="<?php if (get_field('out_site_url')) {
+                                                the_field('out_site_url');
+                                            } else {
+                                                echo get_template_directory_uri() . get_field('site_url');
+                                            } ?>" class="work_site" target="_blank">サイトを見る</a>
+                            <?php endif; ?>
+
+                            <?php if (get_field('git_url')): ?>
+                                <a href="<?php the_field('git_url'); ?>" class="work_git" target="_blank">GitHub</a>
+                            <?php endif; ?>
+
+                        </div>
+
                         <h3><?php the_field('production_title'); ?></h3>
                         <ul>
                             <li>
