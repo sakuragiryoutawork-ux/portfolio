@@ -76,6 +76,7 @@ h3 {
     font-size: 24px;
     font-family: "Noto Sans JP", sans-serif;
     font-optical-sizing: auto;
+    overflow-wrap: break-word;
 }
 
 .overview hr {
@@ -137,6 +138,10 @@ h3 {
 }
 
 /* 制作物一覧 */
+
+.work {
+    width: 100%;
+}
 
 .allworks {
     margin-top: 50px;

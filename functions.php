@@ -143,6 +143,16 @@ function mytheme_enqueue_assets()
         true,
     );
 
+    if (!is_singular('works') && !is_404()) {
+        wp_enqueue_script(
+            'header_scroll',
+            get_template_directory_uri() . '/assets/js/header_scroll.js',
+            ['jquery'],
+            null,
+            true,
+        );
+    }
+
     // カーソルjs
     wp_enqueue_script(
         'cursor_top',

@@ -12,7 +12,7 @@
 
 <body>
     <?php wp_body_open(); ?>
-    <header>
+    <header class="back-active">
         <div class="logo">
             <h1>
                 <a href="<?php echo home_url(); ?>">Sakuragi Ryouta<br>
