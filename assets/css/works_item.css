@@ -109,7 +109,7 @@ main {
     margin-bottom: 30px;
 }
 
-h3 {
+.content_title {
     color: #070092;
     font-size: 24px;
     font-family: "Noto Sans JP", sans-serif;
