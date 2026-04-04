@@ -35,8 +35,8 @@
                             <span><?php the_field('production_count'); ?></span>
                         </div>
 
-                        <div class="for_more">
 
+                        <div class="for_more">
                             <?php if (get_field('site_url') || get_field('out_site_url')): ?>
                                 <a href="<?php if (get_field('out_site_url')) {
                                                 the_field('out_site_url');
@@ -48,8 +48,13 @@
                             <?php if (get_field('git_url')): ?>
                                 <a href="<?php the_field('git_url'); ?>" class="work_git" target="_blank">GitHub</a>
                             <?php endif; ?>
-
                         </div>
+
+                        <?php if (get_field('site_id')): ?>
+                            <div class="site_id">
+                                <p><?php echo nl2br(get_field('site_id')); ?></p>
+                            </div>
+                        <?php endif; ?>
 
                         <p class="content_title"><?php the_field('production_title'); ?></p>
                         <ul>
