@@ -109,7 +109,7 @@
     <section id="About" class="About">
         <div class="inner">
             <h2>About</h2>
-            <p>-僕について-</p>
+            <p>-私について-</p>
             <?php
             $args = [
                 'name' => 'top-about',
@@ -129,13 +129,6 @@
                     <p><?php the_title(); ?></p>
                     <?php the_content(); ?>
                 </div>
-                <!-- <img src="<?php echo get_template_directory_uri(); ?>/assets/image/img/sora.jpg" alt="">
-                        <div class="text">
-                            <p>櫻木　涼太</p>
-                            <p>制御盤設計の経験を活かし、
-                                論理的思考を強みにWebエンジニアを目指しています。
-                                現在はプログラミングスクールで学習中です。</p>
-                        </div> -->
                 <?php endwhile; ?>
             </div>
             <?php
