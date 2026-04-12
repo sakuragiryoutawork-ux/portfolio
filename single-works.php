@@ -89,20 +89,6 @@
 
             <?php endif; ?>
         </div>
-        <?php
-        $pic_pc = get_field('diagram_pc');
-        $pic_iphone = get_field('diagram_iphone');
-        ?>
-        <?php if ($pic && $pic_iphone): ?>
-            <div class="completed_diagram">
-                <h2>design</h2>
-                <p>-完成図-</p>
-                <div class="work-img">
-                    <img src="<?php echo esc_url($pic_pc['url']); ?>" alt="PC版の完成図" class="PC">
-                    <img src="<?php echo esc_url($pic_iphone['url']); ?>" alt="スマホ版の完成図" class="iPhone">
-                </div>
-            </div>
-        <?php endif; ?>
         <div class="allworks">
             <h2>allworks</h2>
             <p>-制作物一覧-</p>
