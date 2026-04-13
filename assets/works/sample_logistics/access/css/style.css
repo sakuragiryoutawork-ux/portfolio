@@ -1,0 +1,424 @@
+@charset "UTF-8";
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #270407;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+    display: block;
+}
+
+section {
+    padding-bottom: 80px;
+}
+
+.inner {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+.logo {
+    width: 200px;
+    margin: 30px auto;
+}
+
+/* ハンバーガーメニュー */
+
+.menu {
+    position: fixed;
+    top: -1000px;
+    left: 50%;
+    z-index: 1;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgb(44, 5, 8) 100%);
+    transform: translateX(-50%);
+    transition: ease 0.7s;
+}
+
+.menu li {
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+.menu li+li {
+    border-top: 1px solid #f1ecec;
+}
+
+.menu li a {
+    padding: 12px 60px;
+    display: block;
+}
+
+.menu li span {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    left: 0;
+    background-color: #fff;
+    transform: translateY(150%);
+    border-radius: 50%;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.menu li span:nth-child(2) {
+    left: 25%;
+    transition-delay: 0.1S;
+}
+
+.menu li span:nth-child(3) {
+    left: 50%;
+    transition-delay: 0.2S;
+}
+
+.menu li span:nth-child(4) {
+    left: 75%;
+    transition-delay: 0.3S;
+}
+
+.btn-gnavi {
+    width: 42px;
+    height: 42px;
+    position: fixed;
+    top: 5px;
+    right: 13px;
+    z-index: 100;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn-gnavi span {
+    width: 30px;
+    border-bottom: solid 3px #270407;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    transition: all 400ms;
+}
+
+.btn-gnavi span:nth-child(1) {
+    top: 11px;
+}
+
+.btn-gnavi span:nth-child(2) {
+    top: 21px;
+}
+
+.btn-gnavi span:nth-child(3) {
+    top: 31px;
+}
+
+/* ボタンが押された時 (ハンバーガーメニュー)*/
+
+.menu.is-active {
+    top: 80px;
+}
+
+.btn-gnavi.is-active span:nth-of-type(1) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.btn-gnavi.is-active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.btn-gnavi.is-active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+@media screen and (min-width: 768px) {
+    .btn-gnavi {
+        display: none;
+    }
+
+    .menu {
+        width: 100%;
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        transform: translateX(0);
+    }
+
+    .menu li:first-child {
+        border-left: 1px dotted #f1ecec;
+    }
+
+    .menu li {
+        width: auto;
+        border-right: 1px dotted #f1ecec;
+    }
+
+    .menu li+li {
+        border-top: none;
+    }
+}
+
+/* KV */
+.KV {
+    background: url(../img/jacques-dillies-jcav1COVvOc-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.KV p {
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 28px;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    letter-spacing: 0.1em;
+}
+
+.KV p+p {
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .KV .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .KV p br {
+        display: none;
+    }
+}
+
+/* 見出し */
+
+.heading {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.heading-body {
+    font-size: 30px;
+}
+
+.subtitle {
+    font-size: 12px;
+    color: #ed1c24;
+    letter-spacing: 0.2em;
+}
+
+/* ご挨拶 */
+
+.greeting p+p {
+    margin-top: 15px;
+}
+
+/* 物流センター */
+.logistics_center {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.logistics_center li a {
+    height: 100%;
+}
+
+.logistics_center-card {
+    height: 100%;
+    background: linear-gradient(30deg, rgba(0, 0, 0, 1) 0%, rgba(89, 14, 19, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logistics_center-card img {
+    width: 100%;
+}
+
+.logistics_center-card h3 {
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.logistics_center-card p {
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* 採用情報 */
+.rec_info {
+    background: url(../img/akson-1K8pIbIrhkQ-unsplash.jpg) center no-repeat;
+    background-size: cover;
+    padding-bottom: 80px;
+}
+
+.rec_info-btn {
+    margin: 120px 0 50px;
+    text-align: center;
+}
+
+.rec_info-btn a {
+    display: block;
+    width: 260px;
+    padding: 14px 40px;
+    margin: 0 auto;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rec_info-btn a::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #333333;
+    border-right: 2px solid #333333;
+    transform: rotate(45deg);
+}
+
+.rec_info-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.rec_info-item {
+    width: 50%;
+}
+
+.rec_info-card {
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s;
+}
+
+.rec_info-card p {
+    font-size: 18px;
+    color: #fff;
+}
+
+.rec_info-card.num1 {
+    background: url(../img/barthelemy-de-mazenod-Vh1WQ3i9RE0-unsplash.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.rec_info-card.num2 {
+    background: url(../img/campaign-creators-qCi_MzVODoU-unsplash.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.rec_info-card.num3 {
+    background: url(../img/linkedin-sales-solutions-nISqmehpBQk-unsplash.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.rec_info-card.num4 {
+    background: url(../img/disruptivo-iQ15DTx-63k-unsplash.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.rec_info-card:hover {
+    filter: brightness(50%)
+}
+
+@media screen and (min-width: 768px) {
+    .rec_info-item {
+        width: 25%;
+    }
+}
+
+/* フッター */
+
+footer {
+    padding-top: 20px;
+    background: linear-gradient(0, rgb(224, 217, 217) 0%, rgb(244, 239, 239) 100%)
+}
+
+footer .logo {
+    margin: 0;
+}
+
+footer .logo a {
+    padding: 20px 0;
+}
+
+footer nav {
+    padding: 10px 0 40px;
+}
+
+footer nav li {
+    border-bottom: 1px solid #000;
+}
+
+footer nav li a {
+    padding: 10px 20px;
+}
+
+.terms {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.terms a {
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.cpr {
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+    background: linear-gradient(30deg, rgba(0, 0, 0, 1) 0%, rgba(89, 14, 19, 1) 100%);
+    border-bottom: 3px solid #ed1c24;
+    ;
+}
+
+.cpr small {
+    color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+    footer nav li {
+        display: inline-block;
+        border-bottom: none;
+        border-right: 1px dotted #000;
+    }
+
+    footer nav li:first-child {
+        border-left: 1px dotted #000;
+    }
+
+    footer nav li a {
+        padding: 0 20px;
+    }
+}
