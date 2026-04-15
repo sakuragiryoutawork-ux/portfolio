@@ -16,27 +16,35 @@
     if (!empty($works_terms)):
     ?>
 
-    <div class="category-tabs">
-        <a href="<?php echo home_url('/works/'); ?>" class="tab-btn <?php if (is_post_type_archive('works')) echo 'active'; ?>">すべて</a>
-        <?php foreach ($works_terms as $works): ?>
+        <?php
+        // 「その他」を最後に並び替え
+        usort($works_terms, function ($a, $b) {
+            if ($a->name === 'その他') return 1;
+            if ($b->name === 'その他') return -1;
+            return 0;
+        });
+        ?>
 
-        <a href="<?php echo get_term_link($works) ?>" class="tab-btn <?php if (is_tax('works_object', $works->slug)) echo 'active'; ?>">
-            <?php echo $works->name; ?>
-        </a>
+        <div class="category-tabs">
+            <a href="<?php echo home_url('/works/'); ?>" class="tab-btn <?php if (is_post_type_archive('works')) echo 'active'; ?>">すべて</a>
 
-        <?php endforeach; ?>
-    </div>
+            <?php foreach ($works_terms as $works): ?>
+                <a href="<?php echo get_term_link($works) ?>" class="tab-btn <?php if (is_tax('works_object', $works->slug)) echo 'active'; ?>">
+                    <?php echo $works->name; ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
 
-    <?php
+        <?php
         if (have_posts()):
         ?>
-    <ul class="work">
-        <?php while (have_posts()): ?>
-        <?php the_post(); ?>
-        <?php get_template_part('template-parts/works-card'); ?>
-        <?php endwhile; ?>
-    </ul>
-    <?php
+            <ul class="work">
+                <?php while (have_posts()): ?>
+                    <?php the_post(); ?>
+                    <?php get_template_part('template-parts/works-card'); ?>
+                <?php endwhile; ?>
+            </ul>
+        <?php
         endif;
         wp_reset_postdata();
         ?>

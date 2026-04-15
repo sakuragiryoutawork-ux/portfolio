@@ -1,0 +1,43 @@
+@charset "UFT-8";
+
+body {
+    cursor: crosshair;
+}
+
+.cursor-img {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.none{
+    display: none;
+}
+
+.cursor-btn .on,
+.cursor-btn .off {
+    width: 100px;
+    height: 100px;
+    border: 0.3em solid #fff;
+    border-radius: 0.5em;
+    color: #fff;
+    box-sizing: border-box;
+    background-color: rgba(177, 242, 255, 0.7);
+    text-align: center;
+    font-size: 30px;
+    transition: 0.5s;
+}
+
+.cursor-btn .on {
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+}
+
+.cursor-btn .off {
+    position: fixed;
+    left: 40px;
+    bottom: 20px;
+}
